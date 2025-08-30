@@ -1,0 +1,102 @@
+Got it. I'll remove the SVG code from the `README.md` to ensure no raw code is displayed. You'll just have the descriptive text for the methodology.
+
+Here is the revised `README.md` content in English, without the SVG code. You can copy and paste this directly into your `README.md` file.
+
+-----
+
+# Design and Optimization Pipeline for Peptide Synthesis Solvents
+
+This project implements an advanced computational workflow for the design of new solvents for peptide synthesis. It combines a series of machine learning models and computational chemistry calculations to identify molecules with desired chemical and physical properties.
+
+-----
+
+### 🧪 Project Methodology
+
+The project implements a sophisticated computational workflow for the design and optimization of new peptide synthesis solvents. The methodology is structured as a multi-stage pipeline that integrates quantum chemistry calculations (DFT) with advanced machine learning (ML) models and neural networks.
+
+Here is a diagram illustrating the workflow:
+
+
+1.  **Dataset Generation**: An initial dataset is created from common solvents and databases like **ChEMBL**. This set is expanded by generating molecular variants to create a diverse collection of compounds.
+2.  **Descriptor Processing**: For each molecule, over 40 heuristic molecular descriptors are calculated. These descriptors, including physical and chemical properties like molecular weight (MolWt), polarity (LogP), and polar surface area (TPSA), are normalized for use as input into the machine learning models.
+3.  **DFT (Density Functional Theory) Calculations**: A diverse subset of molecules is subjected to DFT calculations to obtain high-accuracy reference properties, such as total energy, dipole moment, and HOMO-LUMO orbital energies. This high-quality data is used to train the surrogate models.
+4.  **Surrogate Models**: **Random Forest** and **Gaussian Process Regressor** models are trained to quickly predict molecular properties from their molecular descriptors. These surrogate models, trained on DFT data, act as a computationally inexpensive alternative to full quantum chemistry calculations, allowing for a broader exploration of the chemical space.
+5.  **Autoencoder Architecture**:
+      * **Variational Autoencoder (VAE)**: A VAE is trained to compress the molecular descriptor representation from 50 dimensions to a continuous latent space of 8 dimensions. This latent space allows for smooth navigation to generate new molecules.
+      * **Property Autoencoder**: A second autoencoder refines the VAE's representation, further reducing the latent space to a 4-dimensional representation focused on key solvent properties.
+6.  **Bayesian Optimization**: Bayesian optimization is used to efficiently search the VAE's latent space, identifying molecular candidates that maximize an objective function. This function rewards desirable properties for peptide synthesis, such as a high dipole moment and a moderate HOMO-LUMO energy gap.
+7.  **DFT Validation**: The best candidates identified by the optimization process are validated with a full DFT calculation to obtain their reference properties. The results are compared with the surrogate model predictions to evaluate the pipeline's performance and the models' accuracy.
+
+-----
+
+### 💻 Installation Requirements
+
+The project requires the following Python libraries. You can install them using `pip`.
+
+```bash
+pip install numpy torch scikit-learn pandas bayes-opt tqdm
+```
+
+**Optional Dependencies:**
+
+  * **chembl\_webresource\_client**: To access the molecule database.
+    ```bash
+    pip install chembl_webresource_client
+    ```
+  * **PySCF**: To perform DFT (Density Functional Theory) calculations. If not installed, DFT calculations will be simulated.
+    ```bash
+    pip install pyscf
+    ```
+
+-----
+
+### 🚀 How to Use
+
+To run the complete workflow, simply execute the main script.
+
+```bash
+python Final\ Code\ Molecules.py
+```
+
+The script will automatically execute all pipeline steps in the correct order, from data generation to DFT validation of the optimized candidate.
+
+-----
+
+### 📈 Results (Example Output)
+
+The script concludes by printing the key results, showing the surrogate model's performance and the validation of the best candidate.
+
+```
+==========================================================================================
+ ENHANCED PIPELINE — PEPTIDE SYNTHESIS SOLVENT DESIGN
+==========================================================================================
+
+STEP 1 — Generating extended dataset...
+...
+✓ Dataset generated: 120 compounds
+
+STEP 2 — Building descriptor matrix...
+✓ 120 molecules, 50 descriptors
+
+...
+
+STEP 4 — Training surrogate with cross-validation (k=5)...
+  CV dipole: R2=0.887±0.052, RMSE=0.556
+  CV gap: R2=0.751±0.068, RMSE=0.045
+...
+
+==========================================================================================
+FINAL RESULTS
+==========================================================================================
+
+Dataset: 120 compounds, 50 descriptors
+Valid DFT: 25
+
+Best candidate: score=8.1256
+  • Similar molecule: O=C1OCCO1_var (dist=0.0321)
+
+DFT vs ML Comparison:
+  - energy: DFT=-114.3415 | ML=-113.8824 | error%=0.40
+  - dipole: DFT=5.4328 | ML=5.1983 | error%=4.32
+  - gap: DFT=0.4851 | ML=0.4776 | error%=1.55
+```
