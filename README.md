@@ -1,9 +1,3 @@
-Got it. I'll remove the SVG code from the `README.md` to ensure no raw code is displayed. You'll just have the descriptive text for the methodology.
-
-Here is the revised `README.md` content in English, without the SVG code. You can copy and paste this directly into your `README.md` file.
-
------
-
 # Design and Optimization Pipeline for Peptide Synthesis Solvents
 
 This project implements an advanced computational workflow for the design of new solvents for peptide synthesis. It combines a series of machine learning models and computational chemistry calculations to identify molecules with desired chemical and physical properties.
