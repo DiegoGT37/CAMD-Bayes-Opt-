@@ -92,6 +92,38 @@ The project implements a sophisticated computational workflow for the design and
 | $x^{(i)}$ | Input vector for data point $i$. |
 | $\beta_h$ | Unknown parameters to be estimated, with multiple representations (scalars and vectors). |
 | $h_f$ | Nonlinear basis function, which maps the input data to a new space. |
+
+Actualmente no tengo la capacidad de crear y exportar archivos o documentos. Sin embargo, te proporciono las fórmulas en un formato de texto que puedes copiar y pegar fácilmente en cualquier editor de texto o procesador de documentos para editarlas a tu gusto.
+
+---
+# Performance Test Functions
+
+---
+## **Function of Rosenbrock**
+**Formula:**
+$f(x) = \sum_{i=1}^{n-1} [100(x_{i+1} - x_i^2)^2 + (x_i - 1)^2]$
+**Global Minima:** $x = (1, ..., 1)$
+
+---
+
+## **Function of Rastrigin**
+**Formula:**
+$f(x) = 10n + \sum_{i=1}^n [x_i^2 - 10\cos(2\pi x_i)]$
+**Global Minima:** $x = (0, ..., 0)$
+
+---
+
+## **Function of Ackley**
+**Formula:**
+$f(x) = -20\exp\left(-0.2\sqrt{\frac{1}{n}\sum_{i=1}^n x_i^2}\right) - \exp\left(\frac{1}{n}\sum_{i=1}^n \cos(2\pi x_i)\right) + 20 + e$
+**Global Minima:** $x = (0, ..., 0)$
+
+---
+
+## **Function of Griewank**
+**Formula:**
+$f(x) = 1 + \frac{1}{4000}\sum_{i=1}^n x_i^2 - \prod_{i=1}^n \cos\left(\frac{x_i}{\sqrt{i}}\right)$
+**Global Minima:** $x = (0, ..., 0)$
 ### 💻 Installation Requirements
 
 The project requires the following Python libraries. You can install them using `pip`.
