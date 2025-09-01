@@ -9,7 +9,7 @@ This project implements an advanced computational workflow for the design of new
 The project implements a sophisticated computational workflow for the design and optimization of new peptide synthesis solvents. The methodology is structured as a multi-stage pipeline that integrates quantum chemistry calculations (DFT) with advanced machine learning (ML) models and neural networks.
 
 Here is a diagram illustrating the workflow:
-![ML + DFT Solvent Design Pipeline](Methology of Algotithm.png)
+![ML + DFT Solvent Design Pipeline](image_69471e.png)
 
 
 1.  **Dataset Generation**: An initial dataset is created from common solvents and databases like **ChEMBL**. This set is expanded by generating molecular variants to create a diverse collection of compounds.
