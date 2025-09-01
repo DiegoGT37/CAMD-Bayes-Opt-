@@ -22,7 +22,38 @@ Here is a diagram illustrating the workflow:
 7.  **DFT Validation**: The best candidates identified by the optimization process are validated with a full DFT calculation to obtain their reference properties. The results are compared with the surrogate model predictions to evaluate the pipeline's performance and the models' accuracy.
 
 -----
+### Symbol Table
 
+| Symbol | Typical Definition |
+| :--- | :--- |
+| $\varphi$ | Variational parameters, with multiple representations (scalar or vector). |
+| $\theta$ | Model parameters, with multiple representations (scalar, vector, or matrix). |
+| $x$ | Input data, represented as a vector. |
+| $z$ | Latent variable, typically represented as a vector. |
+| $p(x,z)$ | Probability distribution that depends on $\theta$, generally a scalar. |
+| $\pi_r$ | Probability associated with rule $r$, typically a scalar. |
+| $p_\pi(t)$ | Probability of the syntactic tree $t$, typically a scalar. |
+| $\xi$ | Random variable in the stochastic function, with multiple representations (scalar, vector, or matrix). |
+| $E_\xi$ | Mathematical expectation over the distribution of $\xi$, typically a scalar. |
+| $x'$ | Input vector from the data space. |
+| $\sigma^2$ | Variance, typically a scalar. |
+| $l$ | Scale length of the RBF kernel, typically a scalar. |
+| $\delta(x,x')$ | Function that evaluates if $x$ and $x'$ are identical, typically a scalar. |
+| $\beta$ | Scalar associated with noise. |
+| $Y$ | Output data matrix with multiple dimensions by columns. |
+| $X$ | Input data matrix. |
+| $K$ | Covariance matrix, can be a matrix or symmetric. |
+| $d$ | Number of dimensions in $Y$, typically a scalar. |
+| $n$ | Number of data points in the training set, typically a scalar. |
+| $\mu$ | Mean, typically a scalar. |
+| $P_X(x)$ | Probability density of $x$, typically a scalar. |
+| $\Sigma$ | Symmetric covariance matrix. |
+| $D$ | Dimensionality of the data, typically a scalar. |
+| $w$ | Random model parameter in vector form. |
+| $p(w), p(D∣w), p(D), p(w∣D)$ | Multiple probabilities (Prior, Evidence), all scalars. |
+| $x^{(i)}$ | Input vector for data point $i$. |
+| $\beta_h$ | Unknown parameters to be estimated, with multiple representations (scalars and vectors). |
+| $h_f$ | Nonlinear basis function, which maps the input data to a new space. |
 ### 💻 Installation Requirements
 
 The project requires the following Python libraries. You can install them using `pip`.
