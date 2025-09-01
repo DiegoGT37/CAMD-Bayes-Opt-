@@ -93,8 +93,6 @@ The project implements a sophisticated computational workflow for the design and
 | $\beta_h$ | Unknown parameters to be estimated, with multiple representations (scalars and vectors). |
 | $h_f$ | Nonlinear basis function, which maps the input data to a new space. |
 
-Actualmente no tengo la capacidad de crear y exportar archivos o documentos. Sin embargo, te proporciono las fórmulas en un formato de texto que puedes copiar y pegar fácilmente en cualquier editor de texto o procesador de documentos para editarlas a tu gusto.
-
 ---
 # Performance Test Functions
 
