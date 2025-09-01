@@ -22,6 +22,44 @@ Here is a diagram illustrating the workflow:
 7.  **DFT Validation**: The best candidates identified by the optimization process are validated with a full DFT calculation to obtain their reference properties. The results are compared with the surrogate model predictions to evaluate the pipeline's performance and the models' accuracy.
 
 -----
+### Methodologies of ML: Descriptive Equations
+
+1.  $L(\varphi, \theta; x) = E_{q_\varphi(z|x)} [\log p_\theta(x, z) - \log q_\varphi(z|x)]$
+
+2.  $p_\pi(t) = \prod_{r \in t_R} \pi_r$
+
+3.  $p_\pi(x) = \sum_{t \in T_G(x)} p_\pi(t)$
+
+4.  $f(x) = E_\xi[f̆(x; \xi)]$
+
+5.  $k(x, x') = \sigma^2 e^{(-\frac{|x - x'|^2}{2l^2})} + \frac{\delta(x, x')}{\beta}$
+
+6.  $p(Y|X, \theta) = \prod_{i=1}^d \frac{e^{(-\frac{1}{2}y_{:,i}^T K^{-1}y_{:,i})}}{(2\pi)^{n/2} |K|^{1/2}}$
+
+7.  $P_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{(-\frac{(x-\mu)^2}{2\sigma^2})}$
+
+8.  $N(X|\mu, \Sigma) = \frac{1}{(2\pi)^{D/2}|\Sigma|^{1/2}} e^{(-\frac{1}{2}(x - \mu)^T\Sigma^{-1}(x - \mu))}$
+
+9.  $p(w | D) = \frac{p(D | w)p(w)}{p(D)}$
+
+10. $y(x^{(i)}) = \beta_h h_f(x^{(i)}) + \varepsilon^{(i)}$
+
+---
+
+### Equation Descriptions
+
+| Equation Number | Description |
+| :--- | :--- |
+| 1 | Mathematical description of the **Autoencoder** process. |
+| 2 | Mathematical description of the **Context-Free Grammars** process. |
+| 3 | Mathematical description of the **Context-Free Grammars** process. |
+| 4 | Mathematical description of the **Context-Free Grammars** process. |
+| 5 | Mathematical description of the **Dimensionality Reduction using GP** process. |
+| 6 | Mathematical description of the **Dimensionality Reduction using GP** process. |
+| 7 | Mathematical description of the **GP (Gaussian Processes)** process. |
+| 8 | Mathematical description of the **GP (Gaussian Processes)** process. |
+| 9 | Mathematical description of the **BO (Bayesian Optimization)** process. |
+| 10 | Mathematical description of the **BO (Bayesian Optimization)** process. |
 ### Symbol Table
 
 | Symbol | Typical Definition |
