@@ -8,7 +8,8 @@ This project implements an advanced computational workflow for the design of new
 
 The project implements a sophisticated computational workflow for the design and optimization of new peptide synthesis solvents. The methodology is structured as a multi-stage pipeline that integrates quantum chemistry calculations (DFT) with advanced machine learning (ML) models and neural networks.
 
-![Diagrama del flujo de trabajo](Methologogy of algoritihm/Methology of Algotithm.png)
+![CarAT Methodology](Methologogy%20of%20algorithm/Methology%20of%20Algotithm.png)
+
 
 1.  **Dataset Generation**: An initial dataset is created from common solvents and databases like **ChEMBL**. This set is expanded by generating molecular variants to create a diverse collection of compounds.
 2.  **Descriptor Processing**: For each molecule, over 40 heuristic molecular descriptors are calculated. These descriptors, including physical and chemical properties like molecular weight (MolWt), polarity (LogP), and polar surface area (TPSA), are normalized for use as input into the machine learning models.
